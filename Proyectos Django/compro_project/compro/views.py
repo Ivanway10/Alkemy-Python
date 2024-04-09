@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from.forms import ProveedorForm, ProductoForm
-from.models import Producto
+from.models import Producto, Proveedor
 
 
 def add_proveedor(request):
@@ -30,8 +30,9 @@ def list_productos(request):
     return render(request, 'compro/list_productos.html', {'productos': productos})
 
 def index(request):
-    return HttpResponse("Welcome to the Compro app!")
+    return render(request, 'compro/home.html')
 
 
 def list_proveedores(request):
-    return HttpResponse("Listado de proveedores")
+    proveedores = Proveedor.objects.all()
+    return render(request, 'compro/list_proveedores.html', {'proveedores': proveedores})

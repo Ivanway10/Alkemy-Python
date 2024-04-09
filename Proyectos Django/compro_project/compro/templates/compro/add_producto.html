@@ -1,10 +1,49 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Nuevo Producto</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        .form-control {
+            background-color: black;
+            color: white;
+            border-color: green;
+        }
+        .btn {
+            background-color: green;
+            color: white;
+            border-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Agregar Nuevo Producto</h2>
+        <form method="post">
+            {% csrf_token %}
 
-{% block content %}
-  <h2>Add Producto</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Add Producto</button>
-  </form>
-{% endblock %}
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="precio">Precio:</label>
+                <input type="number" step="any" class="form-control" id="precio" name="precio" required>
+            </div>
+            <div class="form-group">
+                <label for="stock_actual">Stock Actual:</label>
+                <input type="number" class="form-control" id="stock_actual" name="stock_actual" required>
+            <div class="form-group">
+                <label for="id_proveedor">Proveedor:</label>
+                {{ form.proveedor }}
+            </div>
+            <button type="submit" class="btn btn-primary">Agregar Producto</button>
+        </form>
+    </div>
+</body>
+</html>

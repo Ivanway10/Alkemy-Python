@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Listado de Productos</title>
+    <title>Listado de Proveedores</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
@@ -18,28 +18,25 @@
             border-color: green;
             color:white;
         }
-        
     </style>
 </head>
 <body>
     <div class="container mt-5">
-        <h2>Listado de Productos</h2>
+        <h2>Listado de Proveedores</h2>
         <table class="table table-bordered">
             <thead>
                 <tr>
                     <th>Nombre</th>
-                    <th>Precio</th>
-                    <th>Stock Actual</th>
-                    <th>Proveedor</th>
+                    <th>Apellido</th>
+                    <th>DNI</th>
                 </tr>
             </thead>
             <tbody>
-                {% for producto in productos %}
+                {% for proveedor in proveedores %}
                     <tr>
-                        <td>{{ producto.nombre }}</td>
-                        <td>{{ producto.precio }}</td>
-                        <td>{{ producto.stock_actual }}</td>
-                        <td>{{ producto.proveedor }}</td>
+                        <td>{{ proveedor.nombre }}</td>
+                        <td>{{ proveedor.apellido }}</td>
+                        <td>{{ proveedor.dni }}</td>
                     </tr>
                 {% endfor %}
             </tbody>

@@ -7,8 +7,14 @@ class Proveedor(models.Model):
     apellido = models.CharField(max_length=100)
     dni = models.PositiveIntegerField()
 
+    def __str__(self):
+        return f"{self.nombre} {self.apellido}"
+
 class Producto(models.Model):
     nombre = models.CharField(max_length=100)
     precio = models.FloatField()
     stock_actual = models.PositiveIntegerField()
     proveedor = models.ForeignKey(Proveedor, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.nombre

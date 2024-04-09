@@ -1,0 +1,21 @@
+.imgFondo {
+  background-image: url("../assets/hawaii.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 80vh;
+  background-color: rgb(66, 63, 63);
+  background-blend-mode: soft-light;
+  margin-top: 5em;
+}
+
+.mt-4 {
+  margin-top: 6.5rem!important;
+}
+
+.navbar {
+  background-color: #343A40!important;
+}
+
+.navbar-nav .nav-link {
+  color:whitesmoke;
+}

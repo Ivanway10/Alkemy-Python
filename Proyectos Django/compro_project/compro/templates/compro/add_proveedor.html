@@ -1,10 +1,45 @@
-{% extends 'base.html' %}
-
-{% block content %}
-  <h2>Add Proveedor</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Add Proveedor</button>
-  </form>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Nuevo Proveedor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        .form-control {
+            background-color: black;
+            color: white;
+            border-color: green;
+        }
+        .btn {
+            background-color: green;
+            color: white;
+            border-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Agregar Nuevo Proveedor</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="apellido">Apellido:</label>
+                <input type="text" class="form-control" id="apellido" name="apellido" required>
+            </div>
+            <div class="form-group">
+                <label for="dni">DNI:</label>
+                <input type="number" class="form-control" id="dni" name="dni" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Agregar Proveedor</button>
+        </form>
+    </div>
+</body>
+</html>
